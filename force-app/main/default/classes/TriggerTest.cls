@@ -107,12 +107,7 @@ public with sharing class TriggerTest {
         Test.stopTest();
 
         // Retrieve the accounts again
-        List<Account> insertedAccounts = [SELECT Id, 
-                                          BillingStreet, 
-                                          BillingCity, 
-                                          BillingState, 
-                                          BillingPostalCode, 
-                                          BillingCountry 
+        List<Account> insertedAccounts = [SELECT Id, BillingStreet, BillingCity, BillingState, BillingPostalCode, BillingCountry 
                                           FROM Account 
                                           WHERE Id IN :accountsToInsert
                                           ORDER BY AnnualRevenue ASC];
